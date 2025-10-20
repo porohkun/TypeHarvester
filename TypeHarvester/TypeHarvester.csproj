@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<IsRoslynComponent>true</IsRoslynComponent>
+		<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+
+		<IsPackable>true</IsPackable>
+		<PackageId>TypeHarvester</PackageId>
+		<PackageVersion>1.0.0</PackageVersion>
+		<Authors>Porohkun</Authors>
+		<Description>Incremental Roslyn analyzer and source generator</Description>
+		
+		<!-- Для GitHub Packages -->
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/porohkun/TypeHarvester</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0" PrivateAssets="all" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" PrivateAssets="all" GeneratePathProperty="true"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="$(PkgNewtonsoft_Json)\lib\netstandard2.0\*.dll"
+		      Pack="true" 
+		      PackagePath="analyzers/dotnet/cs" 
+		      Visible="false" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<GetTargetPathDependsOn>
+			$(GetTargetPathDependsOn);GetDependencyTargetPaths
+		</GetTargetPathDependsOn>
+	</PropertyGroup>
+
+	<Target Name="GetDependencyTargetPaths">
+		<ItemGroup>
+			<TargetPathWithTargetPlatformMoniker
+				Include="$(PKGNewtonsoft_Json)\lib\netstandard2.0\Newtonsoft.Json.dll"
+				IncludeRuntimeDependency="false" />
+		</ItemGroup>
+	</Target>
+
+</Project>
