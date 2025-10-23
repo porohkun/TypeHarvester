@@ -1,19 +1,32 @@
 <Project>
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
-		<IsPackable>true</IsPackable>
-		<PackageId>TypeHarvester</PackageId>
-		<PackageVersion>1.0.0</PackageVersion>
-		<Authors>Porohkun</Authors>
-		<Description>Incremental Roslyn analyzer and source generator</Description>
-	</PropertyGroup>
-
-	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
 		<LangVersion>latest</LangVersion>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'DebugCompilation'">
+		<DefineConstants>$(DefineConstants);ATTACH_DEBUGGER</DefineConstants>
+	</PropertyGroup>
+
+	<Choose>
+		<When Condition="'$(Configuration)' == 'Debug'">
+			<ItemGroup Condition=" '$(TypeHarvester)' == 'true' ">
+				<ProjectReference Include="..\TypeHarvester\TypeHarvester.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+				<AdditionalFiles Include="codegen.config.json" />
+			</ItemGroup>
+		</When>
+		<When Condition="'$(Configuration)' == 'Release'">
+			<ItemGroup Condition=" '$(TypeHarvester)' == 'true' ">
+				<PackageReference Include="TypeHarvester" Version="1.0.0">
+					<PrivateAssets>all</PrivateAssets>
+					<IncludeAssets> analyzers;</IncludeAssets>
+				</PackageReference>
+				<AdditionalFiles Include="codegen.config.json" />
+			</ItemGroup>
+		</When>
+	</Choose>
 
 </Project>

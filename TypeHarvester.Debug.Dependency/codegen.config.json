@@ -1,0 +1,8 @@
+{
+  "CollectTypesWithAttributes": {
+    "Attributes": [
+      "TypeHarvester.Debug.Dependency.MyAttribute"
+    ],
+    "CollectToCache": true
+  }
+}

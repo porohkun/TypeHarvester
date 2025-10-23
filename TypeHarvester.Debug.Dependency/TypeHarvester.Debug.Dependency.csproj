@@ -1,13 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+	
 	<PropertyGroup>
-		<OutputType>Exe</OutputType>
 		<TypeHarvester>true</TypeHarvester>
 		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
 	</PropertyGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\TypeHarvester.Debug.Dependency\TypeHarvester.Debug.Dependency.csproj" />
-	</ItemGroup>
 
 </Project>

@@ -1,0 +1,9 @@
+{
+  "CollectTypesWithAttributes": {
+    "Attributes": [
+      "TypeHarvester.Debug.Dependency.MyAttribute"
+    ],
+    "NamespaceForGenerations": "TypeHarvester.Debug",
+    "Partial":  true
+  }
+}
