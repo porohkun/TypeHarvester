@@ -20,7 +20,7 @@
 		</When>
 		<When Condition="'$(Configuration)' == 'Release'">
 			<ItemGroup Condition=" '$(TypeHarvester)' == 'true' ">
-				<PackageReference Include="TypeHarvester" Version="1.0.0">
+				<PackageReference Include="TypeHarvester" Version="1.0.1">
 					<PrivateAssets>all</PrivateAssets>
 					<IncludeAssets> analyzers;</IncludeAssets>
 				</PackageReference>

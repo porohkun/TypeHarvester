@@ -12,7 +12,7 @@
 		<!-- Package -->
 		<IsPackable>true</IsPackable>
 		<PackageId>TypeHarvester</PackageId>
-		<PackageVersion>1.0.0</PackageVersion>
+		<PackageVersion>1.0.1</PackageVersion>
 		<Authors>Porohkun</Authors>
 		<Description>Incremental Roslyn analyzer for compile-time type discovery without reflection issues. Solves the problem of incomplete type discovery in multi-assembly applications.</Description>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
