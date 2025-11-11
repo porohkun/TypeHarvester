@@ -91,7 +91,8 @@ internal partial class CollectTypesWithAttributesGenerator :
                 {
                    { "Types", types },
                    { "Namespace", config.NamespaceForGenerations! },
-                   { "Partial", config.Partial }
+                   { "Partial", config.Partial },
+                   { "Version", GetType().Assembly.GetName().Version.ToString() }
                 });
 
         spc.AddSource(GeneratedFileName, SourceText.From(generated, new UTF8Encoding(true)));

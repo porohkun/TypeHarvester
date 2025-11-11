@@ -328,8 +328,6 @@ node_modules/
 *.dsp
 
 # Visual Studio 6 technical files
-*.ncb
-*.aps
 
 # Visual Studio LightSwitch build output
 **/*.HTMLClient/GeneratedArtifacts
@@ -426,3 +424,4 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+*.g.cs

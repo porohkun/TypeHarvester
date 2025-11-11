@@ -4,5 +4,4 @@
 		<TypeHarvester>true</TypeHarvester>
 		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
 	</PropertyGroup>
-
 </Project>

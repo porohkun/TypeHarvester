@@ -33,7 +33,10 @@ In your project’s `.csproj`:
 
 ```xml
 <ItemGroup>
-  <ProjectReference Include="TypeHarvester" Version="latest" />
+  <PackageReference Include="TypeHarvester" Version="latest">
+    <PrivateAssets>all</PrivateAssets>
+    <IncludeAssets> analyzers;</IncludeAssets>
+  </PackageReference>
   <AdditionalFiles Include="codegen.config.json" />
 </ItemGroup>
 ```
@@ -130,7 +133,10 @@ TypeHarvester решает проблему **протекающих абстр�
 
 ```xml
 <ItemGroup>
-  <ProjectReference Include="TypeHarvester" Version="latest" />
+  <PackageReference Include="TypeHarvester" Version="latest">
+    <PrivateAssets>all</PrivateAssets>
+    <IncludeAssets> analyzers;</IncludeAssets>
+  </PackageReference>
   <AdditionalFiles Include="codegen.config.json" />
 </ItemGroup>
 ```

@@ -12,7 +12,10 @@
 		<!-- Package -->
 		<IsPackable>true</IsPackable>
 		<PackageId>TypeHarvester</PackageId>
-		<PackageVersion>1.0.1</PackageVersion>
+		<Version>1.0.3</Version>
+		<AssemblyVersion>1.0.3.0</AssemblyVersion>
+		<FileVersion>1.0.3.0</FileVersion>
+		<InformationalVersion>1.0.3</InformationalVersion>
 		<Authors>Porohkun</Authors>
 		<Description>Incremental Roslyn analyzer for compile-time type discovery without reflection issues. Solves the problem of incomplete type discovery in multi-assembly applications.</Description>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -31,8 +34,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" PrivateAssets="all" />
-		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.9.2" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" PrivateAssets="all" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" PrivateAssets="all" GeneratePathProperty="true" />
 	</ItemGroup>
 

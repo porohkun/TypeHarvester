@@ -29,7 +29,7 @@ internal abstract class BaseIncrementalGenerator<TGenerator, TConfig, TData> : I
     /// <param name="context">Контекст инициализации генератора Roslyn.</param>
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
-#if ATTACH_DEBUGGER
+#if ATTACH_DEBUGGER && DEBUG
         if (!System.Diagnostics.Debugger.IsAttached)
         {
             System.Diagnostics.Debugger.Launch();
